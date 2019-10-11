@@ -19,21 +19,21 @@ public class HomeController {
     @RequestMapping("/")
     public String listMessage(Model model){
         model.addAttribute("messages", messageRepository.findAll());
-        return "list";
+        return "List";
 
     }
 
     @GetMapping("/add")
     public String messageForm(Model model) {
         model.addAttribute("message", new Message());
-        return "messageform";
+        return "Messageform";
 
     }
 
     @PostMapping("/process")
     public String processForm(@Valid Message message, BindingResult result){
         if (result.hasErrors()){
-            return "messageform";
+            return "Messageform";
         }
         messageRepository.save(message);
         return "redirect:/";
@@ -47,7 +47,7 @@ public class HomeController {
     @RequestMapping("/update/{id}")
     public String updateMessage ( @PathVariable("id") long id, Model model){
         model.addAttribute("message", messageRepository.findById(id).get());
-        return "messageform";
+        return "Messageform";
     }
     @RequestMapping("/delete/{id}")
     public String delMessage(@PathVariable("id") long id){
