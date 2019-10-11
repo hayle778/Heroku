@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<h1>Message Form</h1>
+<form action="#" th:action="@{/process}" th:object="${message}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    Content :<input type="text" th:field="*{content}" />
+    <span th:if="${#fields.hasErrors('content')}"
+          th:errors="*{content}"></span><br />
+    Date :<input type="text" th:field="*{date}" />
+    <span th:if="${#fields.hasErrors('date')}"
+          th:errors="*{date}"></span><br />
+    Sentby :<input type="text" th:field="*{sentby}" />
+    <span th:if="${#fields.hasErrors('sentby')}"
+          th:errors="*{sentby}"></span><br />
+    <br />
+    <input type="submit" value="Submit" />
+</form>
+</body>
