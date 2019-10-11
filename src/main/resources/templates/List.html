@@ -8,7 +8,7 @@
 <h1>Message List</h1>
 <a href= "/add">Add a Message</a><br />
 <table>
-    <tr> -
+    <tr>
         <th>content</th>
         <th>date</th>
         <td>Sentby</td>
@@ -17,7 +17,7 @@
         <td th:text="${message.content}"></td>
         <td th:text="${message.date}"></td>
         <td th:text="${message.sentby}"></td>
-        </td>
+        <td>
         <a th:href="@{/update/{id}(id=${message.id})}">Update</a> -
         <a th:href="@{/detail/{id}(id=${message.id})}">Details</a> -
         <a th:href="@{/delete/{id}(id=${message.id})}">Delete</a>
