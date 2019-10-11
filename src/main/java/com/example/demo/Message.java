@@ -24,7 +24,7 @@ public class Message {
 
     @NotNull
     @Size(min = 5)
-    private String Sentby;
+    private String sentby;
 
     public long getId() {
         return id;
@@ -51,10 +51,10 @@ public class Message {
     }
 
     public String getSentby() {
-        return Sentby;
+        return sentby;
     }
 
     public void setSentby(String sentby) {
-        Sentby = sentby;
+        this.sentby = sentby;
     }
 }
